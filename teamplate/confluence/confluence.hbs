@@ -1,0 +1,156 @@
+{{#*inline "highlight"}}{{#if highlight}}*{color:red}{{/if}}{{value}}{{#if highlight}}{color}*{{/if}}{{/inline}}
+
+{{#with summary}}
+
+{{#if collection.description}}
+    {section}
+        {column:width=30%}
+            Description
+        {column}
+        {column:width=70%}
+            {{{collection.description}}}
+        {column}
+    {section}
+{{/if}}
+
+    {{sectionRow "Time" ../timestamp }}
+    {{sectionRow "Exported with" (add "Newman v" ../version) }}
+
+{{#with stats}}
+h2. Base Information
+
+    | ||Total||Failed||
+    |Iterations|{{iterations.total}}|{{>highlight highlight=iterations.failed value=iterations.failed}}|
+    |Requests|{{requests.total}}|{{>highlight highlight=requests.failed value=requests.failed}}|
+    |Prerequest Scripts|{{prerequestScripts.total}}|{{>highlight highlight=prerequestScripts.failed value=prerequestScripts.failed}}|
+    |Test Scripts|{{testScripts.total}}|{{>highlight highlight=testScripts.failed value=testScripts.failed}}|
+    |Assertions|{{assertions.total}}|{{>highlight highlight=assertions.failed value=assertions.failed}}|
+
+{{/with}}
+
+    {{sectionRow "Total run duration" duration}}
+    {{sectionRow "Total data received" responseTotal}}
+    {{sectionRow "Average response time" responseAverage}}
+
+    {{sectionRow "Total Failures" (add (add "*" failures.length) "*") }}
+
+{{/with}}
+{{#with summary}}
+    {{#if failures.length}}
+        h2. Failures
+
+        {{#each failures}}
+            {warning:title={{error.name}}: {{#if error.test}}{{error.test}}{{else}}{{error.message}}{{/if}} }
+                {expand:Details...}
+                    {{#if error.test}}
+                        {{sectionRow "Description" error.message }}
+                    {{/if}}
+                    {{sectionRow "Location" at}}
+                    {{sectionRow "Request" (link (add "#" cursor.ref) (escapeWiki source.name) ) }}
+                    {{#gt cursor.cycles 1}}
+                        {{sectionRow "Iteration" (add cursor.iteration 1)}}
+                    {{/gt}}
+                {expand}
+            {warning}
+        {{/each}}
+    {{/if}}
+{{/with}}
+h2. Requests
+
+{{#each aggregations}}
+    {{#if parent.name}}
+        h3. {{parent.name}}
+    {{/if}}
+    {{> aggregations}}
+{{/each}}
+
+{{#*inline "aggregations"}}
+    {{#each executions}}
+        {anchor:{{cursor.ref}} }
+        {{#if cumulativeTests.failed}}
+            {warning:title={{escapeWiki item.name}} }
+                {expand:Details...}
+                    {{> aggregationContent}}
+                {expand}
+            {warning}
+        {{else}}
+            {tip:title={{escapeWiki item.name}} }
+                {expand:Details...}
+                    {{> aggregationContent}}
+                {expand}
+            {tip}
+        {{/if}}
+    {{/each}}
+{{/inline}}
+
+{{#*inline "aggregationContent"}}
+    {{#with request}}
+        {{#if description.content}}
+            {{sectionRow "Description" (escapeWiki description.content)}}
+        {{/if}}
+
+        {{sectionRow "Method" method}}
+        {{sectionRow "URL" (link url url)}}
+    {{/with}}
+
+    {{#if requestError}}
+        {{sectionRow "Error" "There was an error sending this request"}}
+        {{sectionRow "Error code" requestError.code}}
+        {{#if requestError.connect}}
+            {{sectionRow "Details" "A connection to the host could not be established within the stipulated timeout"}}
+        {{/if}}
+    {{/if}}
+
+    {{sectionRow "Time of request" mean.time}}
+    {{sectionRow "Size of request" mean.size}}
+
+    {{sectionRow "Total passed tests" cumulativeTests.passed}}
+    {{sectionRow "Total failed tests" cumulativeTests.failed}}
+
+    {{sectionRow "Status code" response.code}}
+
+    {{#with request}}
+        {{#if body.raw}}
+            {section}
+                {column:width=30%}
+                    Request body
+                {column}
+                {column:width=70%}
+                    {code:language=js|linenumbers=true}
+{{{body.raw}}}{code}
+                {column}
+            {section}
+        {{/if}}
+    {{/with}}
+
+    {{#if response.body}}
+        {section}
+            {column:width=30%}Response body{column}
+            {column:width=70%}
+                {code:language=js|linenumbers=true}
+{{{response.body}}}{code}
+            {column}
+        {section}
+    {{/if}}
+
+    {{#if assertions.length}}
+        {section}
+            {column:width=30%}Tests{column}
+            {column:width=70%}
+                ||Name||Pass count||Fail count||
+                {{#each assertions}}
+                    |{{name}}|{{> assertionPassed}}|{{> assertionFailed}}|
+                {{/each}}
+            {column}
+        {section}
+    {{/if}}
+{{/inline}}
+
+{{#*inline "assertionPassed"}}{status:colour={{#if passed}}Green{{else}}Grey{{/if}}|title={{passed}}|subtle=false}{{/inline}}
+{{#*inline "assertionFailed"}}{status:colour={{#if failed}}Red{{else}}Grey{{/if}}|title={{failed}}|subtle=false}{{/inline}}
+
+{{#with summary}}
+    {excerpt:hidden=true|atlassian-macro-output-type=BLOCK}
+        {status:colour={{#if failures.length}}Red{{else}}Green{{/if}}|title={{#if failures.length}}FAILED ({{failures.length}} errors){{else}}PASSED{{/if}}|subtle=false} {{../timestamp}}
+    {excerpt}
+{{/with}}

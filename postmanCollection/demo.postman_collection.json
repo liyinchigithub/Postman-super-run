@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "052ac4f9-e948-46b7-876a-691b370f9b2d",
+		"name": "demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "百度",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e5a9616-5f03-4fe8-968e-a5d4f5e2499d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

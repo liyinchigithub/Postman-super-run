@@ -1,0 +1,31 @@
+{
+  "name": "postman-super-run",
+  "version": "1.0.0",
+  "description": "Based on postman script running tool Newman, implement unit test framework to run postman json script",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "newman"
+  ],
+  "git": "https://github.com/liyinchigithub/newman-run-mocha",
+  "author": "liyinchi",
+  "license": "ISC",
+  "dependencies": {
+    "allure-mocha": "^2.0.0-beta.6",
+    "mocha": "^7.1.2",
+    "newman": "^5.0.0",
+    "newman-reporter-allure": "^1.0.5",
+    "newman-reporter-confluence": "^1.0.0",
+    "newman-reporter-csv": "^1.1.1",
+    "newman-reporter-html": "^1.0.5",
+    "newman-reporter-htmlextra": "^1.14.1",
+    "newman-reporter-influxdb": "^1.0.9",
+    "newman-reporter-json-summary": "^1.0.14",
+    "newman-reporter-statsd": "^1.0.2",
+    "newman-reporter-teamcity": "^0.1.12",
+    "newman-reporter-testrail": "^1.0.19",
+    "postman-sandbox": "^3.5.3"
+  }
+}
