@@ -52,9 +52,9 @@ allure serve
 
 ### （1）Nodejs
 
-  | 版本
-------------- | -------------
-| >8.17.0
+  | 版本 |
+ |------------- |
+| >8.17.0 |
 
 >如果你电脑还未安装配置nodejs环境，请参考：https://www.runoob.com/nodejs/nodejs-install-setup.html
 
