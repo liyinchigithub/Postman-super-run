@@ -66,19 +66,21 @@ npm install
 ```
 
 ### （3）将Postman脚本放入postmanCollection文件夹下
+![img](static/image/script_path.jpg)
 
-
-### （4）修改脚本中引入Postman脚本脚本路径
+### （4）修改引入Postman脚本路径的文件名
+![img](static/image/path.jpg)
 
 ### （5）运行
 
+打开命令行终端窗口，输入
 ```shell
 mocha 
 ```
-![img](static/image/demo.jpg)
+![img](static/image/mocha.jpg)
 
-
-
+### （6）自动生成报告文件
+![img](static/image/report.jpg)
 
 ## 3.目录
 文件夹 | 描述 | 

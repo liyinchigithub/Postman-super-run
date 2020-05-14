@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="demo" tests="1" time="0.628">
-  <testsuite name="百度" id="000b8e45-00b1-4ffa-baf9-0ee68b6df65a" timestamp="2020-05-10T08:52:53.486Z" tests="1" failures="0" errors="0" time="0.628">
-    <testcase name="Status code is 200" time="0.628" classname="Demo"/>
+<testsuites name="demo" tests="1" time="1.025">
+  <testsuite name="百度" id="e020c113-3abd-4d90-9296-606ef10cd1e5" timestamp="2020-05-14T15:58:53.991Z" tests="1" failures="0" errors="0" time="1.025">
+    <testcase name="Status code is 200" time="1.025" classname="Demo"/>
   </testsuite>
 </testsuites>
