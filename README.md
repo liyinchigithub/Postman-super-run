@@ -65,7 +65,12 @@ allure serve
 npm install
 ```
 
-### （3）运行
+### （3）将Postman脚本放入postmanCollection文件夹下
+
+
+### （4）修改脚本中引入Postman脚本脚本路径
+
+### （5）运行
 
 ```shell
 mocha 
