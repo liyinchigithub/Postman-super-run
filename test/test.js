@@ -9,13 +9,8 @@ describe("Postman Multi-format report", () => {
             // Postman collection 文件路径，也可以是一个url地址
             collection: require('../postmanCollection/demo.postman_collection.json'), // 作为string，可以提供一个URL，可以在其中找到Collection JSON（例如Postman Cloud API服务）或本地JSON文件的路径。
             // Postman 环境变量 collection 文件路径，也可以是一个url地址
-            environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
-            // Postman 全局变量 
-            globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
-            },
+            environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。
+            // environment 此属性还接受环境变量作为object 例如 environment:{ "key": "url","value": "http://www.baidu.com","enabled": false} 
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
             folder: "",// 集合中要运行的文件夹/文件夹（ItemGroup）的名称或ID，而不是整个集合。类型：string|array
@@ -60,9 +55,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -104,9 +99,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -148,9 +143,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -201,9 +196,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -245,9 +240,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -290,9 +285,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -334,9 +329,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -377,9 +372,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -421,9 +416,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
@@ -464,9 +459,9 @@ describe("Postman Multi-format report", () => {
             environment: require('../postmanCollection/demo.postman_environment.json'),// 可以选择传递有关string此属性的环境文件路径或URL ，并将其用于读取Postman环境变量。此属性还接受环境变量作为object 例如 environment:{ url:"",username:"",password:"" } 从Postman App导出的环境文件可以在这里直接使用。
             // Postman 全局变量 
             globals: {  // 全局变量可以有选择地传递到以文件或URL路径形式运行的集合。它还接受变量作为object
-                url: "http://www.baidu.com",
-                author: "liyinchi",
-                email: "liyinchi@qq.com"
+                "key": "url",
+                "value": "http://www.baidu.com",
+                "enable": true,
             },
             iterationCount: 1,// 指定要在集合上运行的迭代次数。通常会附带提供数据文件引用，例如options.iterationData。类型：number 默认1
             iterationData: "",// （变量参数化）在集合上运行多个迭代时，用作数据源的JSON或CSV文件或URL的路径。类型：string
