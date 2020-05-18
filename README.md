@@ -43,8 +43,16 @@ allure serve
 ![img](static/image/alluer-html2.jpg)
 
 ### （8）statsd
+
 ### （9）teamcity
+
+teamcity 是JetBrains 持续集成框架工具，Postman-super-run将测试结果写入teamcity
+
+![img](http://docs.groovy-lang.org/docs/groovy-2.4.0-rc-1/html/documentation/assets/img/example8.png)
+
 ### （10）influxdb
+
+influxdb是一种时序数据库，将测试结果直接写入到influxdb数据库中，结合Grafana可视化工具，可以把测试结果进行可视化展示。
 
 ## 2.使用
 
