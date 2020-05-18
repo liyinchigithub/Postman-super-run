@@ -1,2 +1,2 @@
 iteration,collectionName,requestName,method,url,status,code,responseTime,responseSize,executed,failed,skipped
-"1","demo","百度","GET","http://www.baidu.com","OK","200","914","258916","Status code is 200"
+"1","demo","百度","GET","http://www.baidu.com","OK","200","1110","255215","Status code is 200"

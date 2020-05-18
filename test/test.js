@@ -1,5 +1,6 @@
 const newman = require('newman');
 var Sandbox = require('postman-sandbox'), context;
+const chalk = require('chalk');
 
 
 describe("Postman Multi-format report", () => {
@@ -41,8 +42,10 @@ describe("Postman Multi-format report", () => {
 
 
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('Default Html Report complete!'));
         });
     });
 
@@ -86,8 +89,10 @@ describe("Postman Multi-format report", () => {
 
 
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('junit xml report complete!'));
         });
     });
 
@@ -130,8 +135,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('json report complete!'));
         });
     });
 
@@ -183,8 +190,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('htmlextra report complete!'));
         });
     });
 
@@ -227,8 +236,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('csv report complete!'));
         });
     });
 
@@ -272,8 +283,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('confluence wiki report complete!'));
         });
     });
 
@@ -316,8 +329,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('allure report complete!'));
         });
     });
 
@@ -360,8 +375,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('testrail report complete!'));
         });
     });
     it.skip("statsd report", () => {
@@ -404,8 +421,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('statsd report complete!'));
         });
     });
     it("teamcity report", () => {
@@ -447,8 +466,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('teamcity report complete!'));
         });
     });
     it("influxdb report", () => {
@@ -493,8 +514,10 @@ describe("Postman Multi-format report", () => {
             sslExtraCaCerts: "", // 文件的路径，其中包含一个或多个PEM格式的受信任CA证书。
             newmanVersion: "", // 用于集合运行的Newman版本。这将由newman设置
         }, function (err) {
-            if (err) { throw err; }
-            console.log(' Code run Postman collection run complete!');
+            if (err) { 
+                console.error(chalk.red(err));
+            }
+            console.log(chalk.green.bold('influxdb report complete!'));
         });
     })
 })
@@ -543,10 +566,14 @@ describe("Newman event config demo", () => {
             console.log('running a collection...');
         }).on('done', function (err, summary) {
             if (err || summary.error) {
-                console.error('collection run encountered an error.');
+              
+                if (err) { 
+                    console.error(chalk.red(err));
+                }
+                console.log(chalk.green.bold('testrail report complete!'));
             }
             else {
-                console.log('Newman run event collection run completed!');
+                console.log(chalk.green.bold('Newman run event collection run completed!'));
             }
         });
 
